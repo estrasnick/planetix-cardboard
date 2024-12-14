@@ -38,9 +38,7 @@ DEBUG = bool(strtobool(os.environ.get("DEBUG", "false")))
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "smallboard.herokuapp.com",
-    ".smallboard.app",
-    "cardinality-cardboard.herokuapp.com",
+    "planetix-cardboard-268e229fe2c6.herokuapp.com/",
 ]
 
 # The first is the published Cardboard Chrome Extension.
