@@ -38,14 +38,16 @@ class Puzzle(SoftDeleteModel):
     notes = models.TextField(default="", blank=True)
     sheet = models.URLField(default=None, unique=True, null=True, blank=True)
 
+    NEW = "NEW"
     SOLVING = "SOLVING"
     PENDING = "PENDING"  # Only supported when answer_queue_enabled is True
     SOLVED = "SOLVED"
     STUCK = "STUCK"
     EXTRACTION = "EXTRACTION"
-    ALL_STATUSES = [SOLVING, PENDING, SOLVED, STUCK, EXTRACTION]
+    ABANDONED = "ABANDONED"
+    ALL_STATUSES = [NEW, SOLVING, PENDING, SOLVED, STUCK, EXTRACTION, ABANDONED]
     # Users should only be able to change status to one of these 3.
-    VISIBLE_STATUS_CHOICES = [SOLVING, STUCK, EXTRACTION]
+    VISIBLE_STATUS_CHOICES = [NEW, SOLVING, STUCK, EXTRACTION, ABANDONED]
 
     status = models.CharField(
         max_length=10,

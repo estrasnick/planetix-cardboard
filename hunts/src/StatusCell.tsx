@@ -15,7 +15,7 @@ export default function StatusCell({
 }) {
   const { id: huntId } = useSelector<RootState, Hunt>((state) => state.hunt);
   const dispatch = useDispatch<Dispatch>();
-  const statuses_to_display = ["SOLVING", "STUCK", "EXTRACTION"];
+  const statuses_to_display = ["NEW", "SOLVING", "STUCK", "EXTRACTION", "ABANDONED"];
   if (value === "SOLVED" || row.original.guesses?.length > 0) {
     statuses_to_display.push("SOLVED");
   }

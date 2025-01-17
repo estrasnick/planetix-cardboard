@@ -147,10 +147,14 @@ function rowClassName(row: Row<Puzzle>) {
   switch (row.values.status) {
     case "SOLVED":
       return "table-success";
+    case "NEW":
+      return "table-danger";
     case "STUCK":
       return "table-danger";
     case "EXTRACTION":
       return "table-danger";
+    case "ABANDONED":
+      return "table-warning";
     case "PENDING":
       return "table-warning";
     default:
