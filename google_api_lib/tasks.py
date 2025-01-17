@@ -573,7 +573,7 @@ def update_active_users(self, hunt_id):
     if end > hunt.end_time:
         return
 
-    action_filter = "detail.action_detail_case: EDIT"
+    action_filter = "detail.action_detail_case:EDIT"
     time_filter = "time > {} AND time <= {}".format(
         round(last_update_time.timestamp() * 1000), round(end.timestamp() * 1000)
     )
@@ -585,7 +585,7 @@ def update_active_users(self, hunt_id):
 
     latest = {}
     logger.info(
-        f"Attempting to update active users with request: {body}"
+        f"Attempting to update active users with request:{body}"
     )
     while True:
         response = self.drive_activity_service().activity().query(body=body).execute()
