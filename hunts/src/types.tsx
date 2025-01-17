@@ -35,7 +35,7 @@ export interface Puzzle {
   notes: string;
   has_sheet: boolean;
   chat_room: ChatRoom | null;
-  status: "SOLVING" | "SOLVED" | "PENDING" | "STUCK";
+  status: "NEW" | "SOLVING" | "SOLVED" | "PENDING" | "STUCK" | "ABANDONED";
   tags: PuzzleTag[];
   guesses: PuzzleGuess[];
   metas: PuzzleId[];

@@ -52,7 +52,7 @@ class Puzzle(SoftDeleteModel):
     status = models.CharField(
         max_length=10,
         choices=[(status, status) for status in ALL_STATUSES],
-        default=SOLVING,
+        default=NEW,
     )
 
     # Deprecated. Use guesses instead (see answers/models.py) which points to an Answer
