@@ -584,6 +584,9 @@ def update_active_users(self, hunt_id):
     }
 
     latest = {}
+    logger.info(
+        f"Attempting to update active users with request: {body}"
+    )
     while True:
         response = self.drive_activity_service().activity().query(body=body).execute()
         activities = response.get("activities", [])
